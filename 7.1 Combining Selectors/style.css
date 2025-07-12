@@ -1,0 +1,28 @@
+/* Write your code here: */
+
+/* Use a group selector */
+h1,
+h2 {
+  color: blueviolet;
+}
+
+/* Use a child selector */
+.box > p {
+  color: firebrick;
+}
+
+/* Use a descendant selector */
+.box li {
+  color: blue ;
+}
+
+/* Use a chaining selector : elementclassesid */
+li.done{
+  color: seagreen;
+}
+
+/* Use a Combining Combiners : ancestor chain */
+ul p.done{
+  font-size: 0.5rem;
+}
+

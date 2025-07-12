@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- link css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- link boxicons -->
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  <title>Weather App</title>
+</head>
+
+<body>
+  <div class="container">
+    <form class="search-box" action="/search" method="POST">
+      <i class='bx bx-location'></i>
+      <input type="text" name="city" placeholder="Enter your location">
+      <button type="submit" class="bx bx-search"></button>
+    </form>
+    <% if (locals.temperature && locals.description && locals.humidity && locals.humidity && locals.wind
+      &&locals.urlImg) { %>
+      <div class="weather-box">
+        <div class="box">
+          <div class="infor-weather">
+            <div class="weather">
+              <img src="<%= urlImg %>">
+              <p class="temperature">
+                <%= temperature %> <span>ºC</span>
+              </p>
+              <p class="description">
+                <%= description %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="weather-details">
+        <div class="humidity"><i class='bx  bx-water'></i>
+          <div class="text">
+            <div class="infor-humidity">
+              <span>
+                <%= humidity %> %
+              </span>
+            </div>
+            <p>Humidity</p>
+          </div>
+        </div>
+
+        <div class="wind"><i class='bx  bx-wind'></i>
+          <div class="text">
+            <div class="infor-wind">
+              <span>
+                <%= wind %> km/h
+              </span>
+            </div>
+            <p>Wind Speed</p>
+          </div>
+        </div>
+      </div>
+      <% } else { %>
+        <div class="weather-box">
+          <div class="box">
+            <div class="infor-weather">
+              <div class="weather">
+                <img src="images/404.png">
+              </div>
+            </div>
+          </div>
+        </div>
+        <% } %>
+  </div>
+
+</body>
+
+</html>
